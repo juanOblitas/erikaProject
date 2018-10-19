@@ -350,3 +350,41 @@ add_image_size( 'jc-featured-image', 1400, 789, true );
  }
  add_action( 'init', 'jc_post_type' );
 
+/*
+ * Define shortcodes
+ * https://codex.wordpress.org/Shortcode_API
+ */
+
+// Create the new shortcode [jc_head] with the callback jcBtnFunc
+add_shortcode("jc_headings", "jcHeadingsFunc");
+
+// Add parameters to function
+function jcHeadingsFunc($atts, $content = null) {
+  return "<" . $atts['type'] . " class='" . $atts['class'] . "'>" . $content . "</" . $atts['type'] . ">";
+}
+
+// Create the new shortcode [jc_btn] with the callback jcBtnFunc
+add_shortcode("jc_btn", "jcBtnFunc");
+
+
+// Add parameters to function
+function jcBtnFunc($atts, $content = null) {
+  return "<" . $atts['type'] . " class='" . $atts['class'] . "' href='" . $atts['link'] . "'>" . $content . "</" . $atts['type'] . ">";
+}
+
+
+// Create the new shortcode [jc_open] with the callback jcBtnFunc
+add_shortcode("jc_open", "jcOpenElement");
+
+// Add parameters to function
+function jcOpenElement($atts) {
+  return "<" . $atts['type'] . " class='" . $atts['class'] . "' href='" . $atts['link'] . "'>";
+}
+
+// Create the new shortcode [jc_close] with the callback jcBtnFunc
+add_shortcode("jc_close", "jcCloseElement");
+
+// Add parameters to function
+function jcCloseElement($atts) {
+  return "</" . $atts['type'] . ">";
+}

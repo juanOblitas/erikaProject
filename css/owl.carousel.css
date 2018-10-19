@@ -171,10 +171,62 @@
 
 
 .jc-boton-carousel{
-  bottom: 40px;
+  bottom: 30px;
 }
 
 
 .jc-text-carousel{
-  padding-bottom: 200px;
+  padding-bottom: 1.2rem;
+  position: relative;
+}
+
+@media (max-width: 414px) {
+  .jc-text-carousel{
+    padding-bottom: 0.2em;
+    font-size: 16px;
+  }
+  .jc-p{
+    font-size: 0.6em;
+    margin-bottom: 0px;
+  }
+  .jc-font-size{
+    font-size: 0.8rem;
+  }
+}
+
+/*#carousel {
+  position: relative;
+}
+
+.carousel-caption{
+  top:0;
+  left: 0;
+}
+
+#carousel .overlay {
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  color:white;
+
+}*/
+
+/* .decolorado{
+  filter: grayscale(20%);
+}*/
+
+@media (min-width: 415px) {
+  .jc-font-size{
+    font-size: 1.5rem;
+  }
+}
+
+.jc-boton-conocenos{
+  top: 1rem;
+}
+
+/* Flechas del carrusel */
+
+.jc-arrow{
+  height: 10%;
+  top: 40%;
 }
