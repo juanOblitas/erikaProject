@@ -4431,10 +4431,17 @@ h2.entry-title{
   padding: 20px 0 !important;
 }
 
-/*.limpieza{
-  font-size: 1.2em;
-  line-height: 1.6em;
-  color: red;
-}*/
+.jc-height-pag{
+  line-height: 0.6rem !important;
+}
+
+.space-before-carousel{
+  margin-bottom: 1%;
+}
+
+.space-after-carousel{
+  margin-bottom: 3%;
+  padding-bottom: 0;
+}
 
 

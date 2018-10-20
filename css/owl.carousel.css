@@ -169,59 +169,37 @@
   height: 100%;
   width: 100%; }
 
+/* Fin Style for shortcode*/
 
 .jc-boton-carousel{
-  bottom: 30px;
+  bottom: 50px;
 }
 
-
-.jc-text-carousel{
-  padding-bottom: 1.2rem;
+#carousel {
   position: relative;
-}
-
-@media (max-width: 414px) {
-  .jc-text-carousel{
-    padding-bottom: 0.2em;
-    font-size: 16px;
-  }
-  .jc-p{
-    font-size: 0.6em;
-    margin-bottom: 0px;
-  }
-  .jc-font-size{
-    font-size: 0.8rem;
-  }
-}
-
-/*#carousel {
-  position: relative;
-}
-
-.carousel-caption{
-  top:0;
-  left: 0;
 }
 
 #carousel .overlay {
   position: absolute;
-  background-color: rgba(0,0,0,0.5);
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
   color:white;
-
-}*/
-
-/* .decolorado{
-  filter: grayscale(20%);
-}*/
-
-@media (min-width: 415px) {
-  .jc-font-size{
-    font-size: 1.5rem;
-  }
 }
 
-.jc-boton-conocenos{
-  top: 1rem;
+#carousel .overlay .container,
+#carousel .overlay .row{
+  height: 100%;
+}
+
+.decolorado{
+  filter: grayscale(20%);
+}
+
+.jc-filter{
+  filter: grayscale(10%);
 }
 
 /* Flechas del carrusel */
@@ -229,4 +207,8 @@
 .jc-arrow{
   height: 10%;
   top: 40%;
+}
+
+.text-height{
+  line-height: 1.5em;
 }

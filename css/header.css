@@ -582,6 +582,11 @@
   }
 }
 
+#site-navigation{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
 @media (min-width: 992px){
   .jc-menu {
     justify-content: space-around;
@@ -642,8 +647,14 @@
 @media (min-width: 992px){
     
   .menu-center{
-    padding-top: 10px;
+    padding-top: 4px;
   }
+}
+
+@media (min-width: 321px){
+    .jc-logo{
+        padding-left: 0.6em;
+    }
 }
 
 /* Fin Menu con la version bootstrapp 4.1*/

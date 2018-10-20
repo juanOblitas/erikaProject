@@ -47,7 +47,7 @@
                 <div class="container">
                     <div class="row border-box jc-icon-menu">
                         
-                            <div class="site-branding">
+                            <div class="site-branding jc-logo">
                                 <?php
                                 the_custom_logo();
                                 ?>
@@ -115,9 +115,9 @@
             </article>
         </div>
     </div>
-    <div class="breadcrumbs">
+    <div class="breadcrumbs space-before-carousel">
         <div class="container">
-            <div id="crumbs" class="content">
+            <div id="crumbs" class="content jc-height-pag">
                 <?php
                 $breadcrumb_ed  = get_theme_mod('corporate_landing_page_ed_breadcrumb', 1);
                 if(function_exists('corporate_landing_page_breadcrumbs')){

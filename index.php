@@ -20,55 +20,51 @@ $layout = get_theme_mod( 'corporate_landing_page_homepage_layout_style', 'defaul
             if ($loop->have_posts()) : 
             ?>
             <div id="carousel" class="carousel slide" data-ride="carousel" data-pause="false">
-              <ol class="carousel-indicators jc-boton-carousel">
+              <!-- <ol class="carousel-indicators jc-boton-carousel"> -->
+              <ol class="jc-boton-carousel">
                 <?php
                   $l = $loop->post_count;
-                  $active="";
                   for ($i = 0; $i < $l; $i++) { 
-                    if ($i == 0){
-                      $active="active";
-                    }else{
-                        $active="";
-                    } 
                 ?>
                 <li data-target="#carousel"
-                data-slide-to="<?php echo $i; ?>" class="<?php echo $active; ?>"
+                data-slide-to="<?php echo $i; ?>" class="<?php if($i == 0) { echo 'active'; } ?>"
                 ></li>
                 <?php
                   }
                 ?>
               </ol>
-              <div class="carousel-inner w-100" role="listbox">
+              <div class="carousel-inner w-100 jc-filter space-after-carousel" role="listbox">
               <?php
                 $n = 0;
                 while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 <div class="carousel-item <?php if($n == 0) { echo 'active'; } ?>">
                   <?php echo get_the_post_thumbnail( $loop->ID, 'jc-featured-image' ); ?>
-                  <div class="carousel-caption">
-                    
-                      <?php the_content(); ?>
-                    
-                    
+                  <div class="overlay">
+                    <div class="container">
+                      <div class="row align-items-center">
+                        <div class="col-md-6 offset-md-3">
+                          <?php the_content(); ?>
+                        </div>
+                      </div>
+                      
+                    </div>  
                   </div>
-
                 </div>
               <?php
                 $n++;
                 endwhile;
               ?>
-                <!-- <div class="overlay"> 
-
-                </div> -->
+                
               </div>
               <!-- Estos a hacen referencia a las flechas de los costados -->
-              <a class="carousel-control-prev jc-arrow" href="#carousel" role="button" data-slide="prev">
+              <!-- <a class="carousel-control-prev jc-arrow" href="#carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
               </a>
               <a class="carousel-control-next jc-arrow" href="#carousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-              </a>
+              </a> -->
             </div>
             <?php
               endif;
