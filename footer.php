@@ -14,20 +14,29 @@
                         <div class="col-lg-3 col-sm-6">
                             <?php dynamic_sidebar('footer-2');?>    
                         </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <?php dynamic_sidebar('footer-3');?>
+                        </div>
 
-                            <div class="col-lg-3 col-sm-6">
-                                <?php dynamic_sidebar('footer-3');?>
-                            </div>
-
-                            <div class="col-lg-3 col-sm-6">
-                                <?php dynamic_sidebar('footer-4');?>
-                            </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <?php dynamic_sidebar('footer-4');?>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php do_action( 'corporate_landing_page_footer'); ?>
-        </footer>
+        </div>
+        <?php /*do_action( 'corporate_landing_page_footer');*/ ?>
+        <!-- Footer contactanos -->
+        <div class="site-info">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="d-none d-sm-block"><?php dynamic_sidebar('footer-5');?></div>
+                    <div><?php dynamic_sidebar('footer-6');?></div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer contactanos -->
+    </footer>
         </div>
         <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

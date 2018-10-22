@@ -45,8 +45,7 @@ $layout = get_theme_mod( 'corporate_landing_page_homepage_layout_style', 'defaul
                         <div class="col-md-6 offset-md-3">
                           <?php the_content(); ?>
                         </div>
-                      </div>
-                      
+                      </div> 
                     </div>  
                   </div>
                 </div>
@@ -71,9 +70,63 @@ $layout = get_theme_mod( 'corporate_landing_page_homepage_layout_style', 'defaul
             ?>
           <!-- Fin carrusel dinamico -->
 
-            <?php 
-                get_sidebar(); 
+          <!-- Cards -->
+          <div class="rounded caja">
+            <h2 class="mb-3 mt-3 service">
+            <div class="container">Nuestros Servicios</div>
+            </h2>
+          <?php
+            $args = array(
+            'post_type' => 'jc_image',
+            'posts_per_page' => 4,
+            'orderby'=>'date&order=DESC'
+            );
+            $image = new WP_Query( $args );
+
+            if ($image->have_posts()) : 
             ?>
+          <div class="container">
+
+          <div class="row mb-3">
+            <?php
+                while ( $image->have_posts() ) : $image->the_post(); 
+            ?>
+            <div class="mb-3 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+              <div class="card">
+                <!-- <img class="card-img-top" src="<?php /*echo get_the_post_thumbnail( $image->ID, 'jc-service-image' );*/ ?>" alt="Foto"> -->
+                <?php echo get_the_post_thumbnail( $image->ID, 'jc-service-image' ); ?>
+                
+                  <?php the_content(); ?>
+                
+              </div>
+            </div>
+            <?php
+                endwhile;
+              ?>
+          </div>
+          </div>
+          <?php
+            endif;
+          ?>
+          </div>
+          <!-- /Cards -->
+          <!-- Video -->
+          <div class="rounded caja">
+            <h2 class="mb-3 mt-3 service">
+            <div class="container">Nosotros en acción</div>
+            </h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
+                <?php 
+                  dynamic_sidebar('sidebar');
+                ?>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- /Video -->
+            
 
           <!-- <?php  
           /*if(have_posts()):
@@ -85,11 +138,11 @@ $layout = get_theme_mod( 'corporate_landing_page_homepage_layout_style', 'defaul
             endif*/;?> -->
             <!-- <div class="clearfix"></div> -->
         </main>
-        <!-- <?php /*corporate_landing_page_pagination()*/; ?> -->
+        <?php corporate_landing_page_pagination(); ?> 
     </div>
 </div>
 <?php 
-/*get_sidebar(); */
+ /*get_sidebar(); */
 ?>
 </div>
 </div>

@@ -997,7 +997,9 @@ a:hover {
   .custom-border,
   .site-content .blog-main .custom-border {
     margin: 0 auto;
-    width: 50px;
+    /*width: 50px;*/
+    /* jc */
+    width: auto;
     height: 5px;
     background-color: #cf9556;
     position: relative;
@@ -2913,7 +2915,8 @@ a:hover {
   /*footer*/
 
   .site-footer .widget-area {
-    padding-bottom: 12%;
+    /*padding-bottom: 12%;*/
+    padding-bottom: 5%; /*jc*/
   }
 
   .site-footer .widget-area .widget {
@@ -3442,7 +3445,8 @@ a:hover {
 
                           .site-footer .widget_media_gallery .gallery, .site-footer .widget_text .textwidget{
                             /*padding: 20px 10px;*/
-                            padding-top: 38px;
+                            /*padding-top: 38px;*/
+                            padding-top: 0.5rem;/*jc*/
                           }
 
                           .site-footer .widget_media_gallery .gallery-icon {
@@ -4444,4 +4448,35 @@ h2.entry-title{
   padding-bottom: 0;
 }
 
+/* Cards */
+p.card-text{
+  font-size: 0.8rem !important;
+}
+
+.caja{
+  border: solid 2px;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.service{
+  background: #6c757d;
+  color: white;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+/* /Cards */
+
+/* video */
+.bg-color-video{
+  background-color: transparent;
+}
+/* /video*/
+
+/*footer*/
+.textwidget>.dropright{
+  margin-top: -70px;
+}
+
+/*/footer*/
 

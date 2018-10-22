@@ -1,5 +1,5 @@
 // owl-carousel
-jQuery(document).ready(function(){
+/*jQuery(document).ready(function(){
 	jQuery(".owl-carousel").owlCarousel({
 	  items: 1,
 	  loop: true,
@@ -11,4 +11,4 @@ jQuery(document).ready(function(){
 		autoplayTimeout: 5000,
 		autoplayHoverPause: false
 	});
-});
+});*/

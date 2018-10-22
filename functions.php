@@ -143,7 +143,7 @@ function corporate_landing_page_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2><div class ="custom-border"></div>',
 	) );
-	register_sidebars(4,array(
+	/*register_sidebars(4,array(
 		'name'          => esc_html__( 'Sidebar %d', 'corporate-landing-page' ),
 		'id'            => 'sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'corporate-landing-page' ),
@@ -151,7 +151,7 @@ function corporate_landing_page_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2><div class ="custom-border"></div>',
-	) );
+	) );*/
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer-1', 'corporate-landing-page' ),
 		'id'            => 'footer-1',
@@ -182,6 +182,24 @@ function corporate_landing_page_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer-4', 'corporate-landing-page' ),
 		'id'            => 'footer-4',
+		'description'   => esc_html__( 'Add widgets here.', 'corporate-landing-page' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2><div class ="custom-border"></div>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer-5', 'corporate-landing-page' ),
+		'id'            => 'footer-5',
+		'description'   => esc_html__( 'Add widgets here.', 'corporate-landing-page' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2><div class ="custom-border"></div>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer-6', 'corporate-landing-page' ),
+		'id'            => 'footer-6',
 		'description'   => esc_html__( 'Add widgets here.', 'corporate-landing-page' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -321,6 +339,8 @@ add_theme_support( 'post-thumbnails' );
 
 add_image_size( 'jc-featured-image', 1400, 789, true );
 
+add_image_size( 'jc-service-image', 566, 566, true );
+
 /*
  * Define custom post type
  * Register post types: https://codex.wordpress.org/Function_Reference/register_post_type
@@ -349,6 +369,38 @@ add_image_size( 'jc-featured-image', 1400, 789, true );
   	);
  }
  add_action( 'init', 'jc_post_type' );
+
+
+
+/*
+ * Define custom post type
+ * Register post types: https://codex.wordpress.org/Function_Reference/register_post_type
+ * Icons: https://developer.wordpress.org/resource/dashicons/
+ */
+ function service_post_type() {
+ 	register_post_type( 'jc_image',
+ 		array(
+	      'labels' => array(
+	        'name' => __( 'Card' ),
+	        'singular_name' => __( 'Item' ),
+	        'add_new' => __( 'Nuevo item' ),
+	        'add_new_item' => __( 'Añadir nuevo item' ),
+	        'edit_item' => __( 'Editar item' ),
+	        'featured_image' => __( 'Imagen del Card' )
+	      ),
+	      'public' => true,
+	      'exclude_from_search' => true,
+	      'has_archive' => false,
+	      'show_in_nav_menus' => false,
+	      'menu_icon' => 'dashicons-format-image',
+	      //'rewrite' => array('slug' => 'carousel'),
+	      'supports' => array('title', 'editor', 'image')
+
+    	)
+  	);
+ }
+ add_action( 'init', 'service_post_type' );
+
 
 /*
  * Define shortcodes
